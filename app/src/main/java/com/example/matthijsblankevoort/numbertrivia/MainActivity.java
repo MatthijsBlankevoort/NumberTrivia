@@ -3,6 +3,7 @@ package com.example.matthijsblankevoort.numbertrivia;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -34,18 +35,16 @@ public class MainActivity extends AppCompatActivity {
 
         addTriviaButton = findViewById(R.id.addTriviaButton);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        mRecyclerView = findViewById(R.id.recyclerView);
 
-        // use this setting to improve performance if you know that changes
-        // in content do not change the layout size of the RecyclerView
-        mRecyclerView.setHasFixedSize(true);
-
-        // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(this);
-        mRecyclerView.setLayoutManager(mLayoutManager);
         triviaNumbers = new ArrayList<>();
         // specify an adapter (see also next example)
-        mAdapter = new TriviaNumbersAdapter(triviaNumbers);
+        mAdapter = new TriviaNumbersAdapter(this, triviaNumbers);
+
+        // use a linear layout manager
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+
         mRecyclerView.setAdapter(mAdapter);
 
         addTriviaButton = findViewById(R.id.addTriviaButton);
