@@ -12,7 +12,7 @@
         app:cardUseCompatPadding="true">
 
         <android.support.constraint.ConstraintLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="100dp">
 
             <TextView
@@ -29,10 +29,10 @@
 
             <TextView
                 android:id="@+id/numberDescription"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
-                android:layout_marginStart="165dp"
+                android:layout_marginStart="8dp"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
